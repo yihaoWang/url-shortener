@@ -19,7 +19,6 @@ class ShortenerRoute extends Route {
 
   protected setRoutes() {
     this.router.post('/', this.shortenerController.shortURL.bind(this.shortenerController));
-    this.router.get('/', this.shortenerController.redirectURL.bind(this.shortenerController));
   }
 }
 
