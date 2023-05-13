@@ -14,7 +14,7 @@ export class ShortUrlGenerator {
 
   public generateShortUrl() {
     const id = this.uid.getUniqueID();
-    const hashId = base58.encode(new Uint8Array(Buffer.from(id.toString(8), 'hex')));
+    const hashId = base58.encode(new Uint8Array(Buffer.from(id.toString(), 'hex')));
 
     return hashId;
   }
