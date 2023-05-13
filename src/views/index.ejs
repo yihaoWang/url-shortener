@@ -47,9 +47,8 @@
 
         try {
           const longUrl = document.getElementById('input-url').value;
-          const domain = 'http://localhost:3000';
           const { data: { hash, url }} = await axios.post('/url', { longUrl });
-          const shortUrl = `<%= domain %>?hash=${hash}`;
+          const shortUrl = `<%= domain %>/${hash}`;
 
           longUrlComponent.innerText = url;
           shortUrlComponent.href = shortUrl;

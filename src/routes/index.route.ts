@@ -12,7 +12,7 @@ class IndexRoute extends Route {
 
   protected setRoutes() {
     this.router.get('/app', this.indexController.rednerHomePage.bind(this.indexController));
-    this.router.get('/', this.indexController.redirectURL.bind(this.indexController));
+    this.router.get('/*', this.indexController.redirectURL.bind(this.indexController));
   }
 }
 

@@ -3,6 +3,8 @@ import { NextFunction, Request, Response } from 'express';
 import config from '../config';
 import { UrlShortenerModule } from '../modules/url-shortener.module';
 
+const HASH_REGEX = /^\/([a-zA-Z0-9]*)$/i;
+
 class IndexController {
   private urlShortenerModule: UrlShortenerModule;
 
@@ -20,7 +22,8 @@ class IndexController {
 
   async redirectURL(req: Request, res: Response, next: NextFunction) {
     try {
-      const hash = req.query.hash as string;
+      const match = req.path.match(HASH_REGEX);
+      const hash = match && match[1];
 
       if (!hash) {
         return res.redirect(301, '/app');
@@ -29,7 +32,7 @@ class IndexController {
       const result = await this.urlShortenerModule.getByHash(hash);
 
       if (!result) {
-        return res.status(400).json({ message: 'Invalid Hash' });
+        return res.redirect(301, '/app');
       }
 
       return res.redirect(301, result.original_url);
