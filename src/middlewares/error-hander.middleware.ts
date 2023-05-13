@@ -1,6 +1,6 @@
-import { ErrorRequestHandler, Request, Response, NextFunction } from 'express';
+import { ErrorRequestHandler, Request, Response } from 'express';
 
-export function errorHandler(err: ErrorRequestHandler, req: Request, res: Response, next: NextFunction) {
-  console.error('[Error Hander] ', err);
+export default function errorHandler(err: ErrorRequestHandler, req: Request, res: Response) {
+  console.error('[Error Hander] ', err); // eslint-disable-line no-console
   res.sendStatus(500);
 }

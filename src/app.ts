@@ -3,7 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 
 import router from './router';
-import { errorHandler } from './middlewares/error-hander.middleware';
+import errorHandler from './middlewares/error-hander.middleware';
 
 const app:express.Application = express();
 
