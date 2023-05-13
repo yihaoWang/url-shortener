@@ -13,7 +13,7 @@
 ```shell
 export INSTANCE_ID="${INSTANCE_ID}"
 export DATABASE_URL="${DATABASE_URL}"
-export URL_SHORTENER_DOMAIN="${URL_SHORTENER_DOMAIN}"
+export SHORTENER_DOMAIN="${SHORTENER_DOMAIN}"
 ```
 
 #### Default envs
