@@ -23,13 +23,13 @@ class ShortenerController {
 
   async shortURL(req: Request, res: Response, next: NextFunction) {
     try {
-      const { url }: { url: string } = req.body;
+      const { longUrl }: { longUrl: string } = req.body;
 
-      if (!url || !this.urlValiderModule.isValid(url)) {
+      if (!longUrl || !this.urlValiderModule.isValid(longUrl)) {
         return res.status(400).json({ message: 'Invalid URL' });
       }
 
-      const fullUrl = this.urlValiderModule.getFullUrl(url);
+      const fullUrl = this.urlValiderModule.getFullUrl(longUrl);
       const hash = this.idGenerator.generateShortUrl();
 
       await this.urlShortenerModule.create({ original_url: fullUrl, hash });
