@@ -43,6 +43,8 @@
 
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
+        errorMessage.textContent = '';
+
         submitBtn.disabled = true;
 
         try {
