@@ -16,15 +16,21 @@ export DATABASE_URL="${DATABASE_URL}"
 export URL_SHORTENER_DOMAIN="${URL_SHORTENER_DOMAIN}"
 ```
 
-Default Envs
+#### Default envs
 
 - INSTANCE_ID: 1
 - SIGN_DASH_DOMAIN: <http://localhost:3000>
 
-#### Install app
+#### Install libraries
 
 ```shell
 yarn install
+```
+
+#### Migrate database
+
+```shell
+npx prisma migrate deploy
 ```
 
 #### Run App
