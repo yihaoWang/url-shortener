@@ -1,10 +1,15 @@
 import ShortenerController from '../controllers/shortener.controller';
 import shortUrlGenerator from '../modules/short-url-generator.module';
 import urlShortenerModule from '../modules/url-shortener.module';
+import urlValiderModule from '../modules/url-valider.module copy';
 import Route from './route';
 
 class ShortenerRoute extends Route {
-  private shortenerController = new ShortenerController(shortUrlGenerator, urlShortenerModule);
+  private shortenerController = new ShortenerController(
+    shortUrlGenerator,
+    urlShortenerModule,
+    urlValiderModule,
+  );
 
   constructor() {
     super();
