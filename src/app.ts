@@ -2,7 +2,8 @@ import path from 'path';
 import express from 'express';
 import morgan from 'morgan';
 
-import router from './router';;
+import router from './router';
+import { errorHandler } from './middlewares/error-hander.middleware';
 
 const app:express.Application = express();
 
@@ -16,5 +17,6 @@ app.set('view engine', 'ejs');
 router.forEach((route) => {
   app.use(route.getPrefix(), route.getRouter());
 });
+app.use(errorHandler);
 
 export default app;
