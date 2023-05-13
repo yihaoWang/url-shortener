@@ -23,7 +23,7 @@ class IndexController {
       const hash = req.query.hash as string;
 
       if (!hash) {
-        return res.status(400).json({ message: 'Invalid Hash' });
+        return res.redirect(301, '/app');
       }
 
       const result = await this.urlShortenerModule.getByHash(hash);
