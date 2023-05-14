@@ -5,6 +5,7 @@
 ### Required
 
 - Node.js >= v16
+- Postgresql Database
 
 ### Install
 
