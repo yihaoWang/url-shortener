@@ -1,4 +1,5 @@
 # url-shortener
+a url shorten web service written by TypeScript, Express.js and EJS.
 
 ## Run in your machine
 
@@ -7,34 +8,34 @@
 - Node.js >= v16
 - Postgresql Database
 
-### Install
+### Quick Start
 
-#### Set up env
-
+1. Clone project
 ```shell
-export INSTANCE_ID="${INSTANCE_ID}"
-export DATABASE_URL="${DATABASE_URL}"
-export SHORTENER_DOMAIN="${SHORTENER_DOMAIN}"
+https://github.com/yihaoWang/url-shortener.git
 ```
 
-#### Default envs
+2. Set up env
 
-- INSTANCE_ID: 1
-- SIGN_DASH_DOMAIN: <http://localhost:3000>
+```shell
+export INSTANCE_ID="${INSTANCE_ID}" // Default: '1'
+export DATABASE_URL="${DATABASE_URL}" // Example: postgres://${username}:${password}@${host}/${database}
+export SHORTENER_DOMAIN="${SHORTENER_DOMAIN}" // Default: http://localhost:3000
+```
 
-#### Install libraries
+3. Install dependencies
 
 ```shell
 yarn install
 ```
 
-#### Migrate database
+4. Migrate database
 
 ```shell
 npx prisma migrate deploy
 ```
 
-#### Run App
+5. Run App
 
 ```shell
 yarn dev
